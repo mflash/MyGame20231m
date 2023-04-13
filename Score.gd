@@ -17,6 +17,12 @@ func _physics_process(delta: float) -> void:
 	update_score(total)
 	if Input.is_action_pressed("right"):
 		position.x += SPEED * delta
+	if Input.is_action_pressed("left"):
+		position.x -= SPEED * delta
+	if Input.is_action_pressed("down"):
+		position.y += SPEED * delta
+	if Input.is_action_pressed("up"):
+		position.y -= SPEED * delta
 	
 func update_score(current_score: float) -> void:
 	$Score.text = str(total)
