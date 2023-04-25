@@ -1,7 +1,8 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Player/char.png" type="Texture" id=2]
+[ext_resource path="res://Items/Box.tscn" type="PackedScene" id=3]
 
 [sub_resource type="AtlasTexture" id=2]
 flags = 4
@@ -110,8 +111,8 @@ animations = [ {
 extents = Vector2( 23, 32.5 )
 
 [node name="Player" type="KinematicBody2D"]
-position = Vector2( 496, 277 )
 script = ExtResource( 1 )
+box = ExtResource( 3 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 18 )
