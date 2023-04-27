@@ -96,4 +96,3 @@ func _physics_process(delta):
 	#print(velocity)
 	velocity = move_and_slide(velocity, Vector2.UP)
 	#move_and_collide(velocity * delta)
-
