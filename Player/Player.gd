@@ -8,6 +8,7 @@ export (PackedScene) var box : PackedScene
 
 onready var target = position # mesmo que func _ready() ...
 onready var sprite = $Sprite
+onready var audio = $Audio
 #onready var box := preload("res://Items/Box.tscn")
 
 
@@ -76,6 +77,8 @@ func get_side_input():
 
 	
 	if Input.is_action_pressed("jump") and is_on_floor():
+		if not audio.playing:
+			audio.play()
 		velocity.y = -jump_speed
 		get_tree().call_group("HUD", "updateScore")
 		var b = box.instance()
